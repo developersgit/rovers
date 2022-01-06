@@ -1,0 +1,32 @@
+
+<main class="form-signin my-5">
+    <form [formGroup]="signUpForm" (ngSubmit)="handleSignUp()" [ngClass]="{'touched': submitted}">
+        <div class="row container" style="margin: auto;">
+            <h4>Register a New Account</h4> 
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-floating mb-3">
+                        <input class="form-control" id="email" type="text" formControlName="email" placeholder="Email" />
+                        <label for="email">Email</label>
+                        <print-error [control]="signUpForm.get('email')" [isSubmitted]="submitted"></print-error>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input id="userName" class="form-control" formControlName="username" type="text" placeholder="User Name"/>
+                        <label for="userName">User Name</label>
+                        <print-error [control]="signUpForm.get('username')" [isSubmitted]="submitted"></print-error>
+                    </div>
+                    
+                    <div class="form-floating mb-3">
+                        <input id="fullName" class="form-control" formControlName="fullname" type="text" placeholder="Full Name"/>
+                        <label for="fullName">Full Name</label>
+                        <print-error [control]="signUpForm.get('fullname')" [isSubmitted]="submitted"></print-error>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Register</button>
+                    <p *ngIf="requestError" style="color: red; margin-top: 15px;">Request Error: <span style="font-size: 12px;">{{requestError}}</span></p>
+                </div>
+            </div>
+        </div>
+    </form>
+</main>
+  

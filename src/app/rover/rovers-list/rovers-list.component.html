@@ -1,0 +1,19 @@
+<div class="container col-centered">
+    <h1>Rovers List</h1>
+    <div class="row  mt-5">
+        <div class="col-md-6 ">
+            <div class="row col-centered" >
+                <div class="col-md-3"> <h5>Rover Id</h5> </div>
+                <div class="col-md-3"> <h5>Rover Name</h5> </div>
+                <div class="col-md-6 "> <h5>Action</h5> </div>
+            </div>
+            <div class="row mt-2 col-centered" *ngFor="let rover of roversList">
+                <div class="col-md-3"> {{ rover.id }} </div>
+                <div class="col-md-3"> {{ rover.name }} </div>
+                <div class="col-md-6"> 
+                    <button type="button" class="btn btn-success" [routerLink]="[rover.id]">View Details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

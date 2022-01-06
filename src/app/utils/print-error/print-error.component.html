@@ -1,0 +1,7 @@
+<div class="error-div" *ngIf="control && control.errors && (control.dirty || control.touched || isSubmitted)">
+    <p *ngIf="control.errors.required">This is a required field.</p>
+    <p *ngIf="control.errors.minlength">Minimum {{ control.errors.minlength.requiredLength }} characters are required.</p>
+    <p *ngIf="control.errors.maxlength">Maximum {{ control.errors.maxlength.requiredLength }} characters are allowed.</p>
+    <p *ngIf="control.errors.email">Please input a valid email.</p>
+    <p *ngIf="control.errors.exists">A record with this email already exists.</p>
+</div>

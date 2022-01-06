@@ -1,0 +1,26 @@
+<div class="container col-centered">
+    <h1 class="mt-3">{{rover.name}} Rover Details</h1>
+    <div class="row  mt-5">
+        <div class="col-md-3 ">
+            <div *ngIf="(rover.id > 0) else notFound">
+                <p><b>Launch Date : </b><span> {{ rover.launch_date }} </span></p>
+                <p><b>Landing Date : </b><span> {{ rover.landing_date }} </span></p>
+                <p><b>Status : </b><span> {{ rover.status }} </span></p>
+                <p><b>Martian days : </b><span> {{ rover.max_sol }} </span></p>
+                <div>
+                    <b>Cameras : </b>
+                    <ul>
+                        <li class="pointer" *ngFor="let camera of rover.cameras" [routerLink]="[camera.name]"> {{ camera.full_name }} </li>
+                    </ul>
+                </div>
+            </div>
+            <ng-template #notFound> 
+                <h4>Rover not Found!</h4>
+            </ng-template>
+	    </div>
+        <div class="col-md-9">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+
+</div>
